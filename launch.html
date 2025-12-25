@@ -13,8 +13,9 @@
     <script>
         // 執行 SMART 授權流程
         FHIR.oauth2.authorize({
-            // ❗ 重要：請將此 Client ID 替換成你在 Sandbox 註冊後取得的 ID
-            "client_id": "your_client_id_here", 
+            // "client_id": "你在沙盒註冊的ID",
+    "scope": "launch openid fhirUser patient/*.read",
+    "redirect_uri": "https://your-name.github.io/my-smart-app/APP.html"//
             
             // 權限範圍：launch 表示從 EHR 啟動, patient/*.read 表示讀取該病患所有資料
             "scope": "launch openid fhirUser patient/*.read",
@@ -24,4 +25,5 @@
         });
     </script>
 </body>
+
 </html>
